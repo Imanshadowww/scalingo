@@ -1,0 +1,11 @@
+{
+  "name": "v2ray-app",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "curl -L -o v.zip https://github.com/v2fly/v2ray-core/releases/latest/download/v2ray-linux-64.zip && unzip -o v.zip -d v2ray_bin && chmod +x v2ray_bin/v2ray",
+    "start": "sed -i \"s/PORT_PLACEHOLDER/$PORT/g\" config.json && ./v2ray_bin/v2ray run -config config.json"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
